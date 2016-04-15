@@ -1,0 +1,40 @@
+<div ng-controller="ServerController as serverCtl">
+
+    <h1>server page</h1>
+    sort: 
+    <input type="text" ng-model="serverSort">
+    <div class="row">
+
+        <!--
+        <div class="col-sm-4" ng-repeat="server in serverCtl.servers | orderBy:'host'">
+        -->
+        <div class="col-md-3 col-sm-6" ng-repeat="server in serverCtl.servers | orderBy:serverSort">
+            <h3>{{server.host}} - {{server.region}}</h3>
+            <ul class="list-group" >
+                <li class="list-group-item">city: {{server.city}}</li>
+                <li class="list-group-item">cpu: {{server.cpu}}</li>
+                <li class="list-group-item">memory: 
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+                          aria-valuemin="0" aria-valuemax="100" style="width:{{server.mem}}%">
+                          {{server.mem}}% Complete (info)
+                      </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    downlaod: {{server.download}}
+                </li>
+                <li class="list-group-item">uplaod: {{server.upload}}</li>
+                <li class="list-group-item">users: {{server.total_users}}</li>
+                <li class="list-group-item">
+                <button type="button" class="btn btn-primary" ng-click="getClientConfig(server.host)">Download Conifg</button>
+                </li>
+            </ul>
+            <!-- for testing -->
+            <input type="text" ng-model="server.mem">
+        </div>
+
+    </div>
+
+
+</div>

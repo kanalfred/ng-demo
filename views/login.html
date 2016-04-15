@@ -1,0 +1,43 @@
+<div>
+    <h1>Login page</h1>
+
+    <div class="row">
+
+        <p>
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Login</button>
+        </p>
+
+        <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form method="post" action='<?= base_url();?>/login' name="loginForm">
+                        <p><input type="text" class="span3" name="email" id="email" placeholder="Enter Email" value=""></p>
+                        <p><input type="password" class="span3" id="loginPassword" name="loginPassword" placeholder="Enter Password"></p>
+                        <p><button type="submit" class="btn btn-success">Sign in</button> <a href="<?= base_url();?>/forgotpassword">Forgot Password</a></p>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+
+</div>
